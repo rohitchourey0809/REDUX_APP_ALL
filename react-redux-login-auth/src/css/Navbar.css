@@ -1,0 +1,10 @@
+.headerdiv{
+display: flex;
+margin: 20px 3px;;
+border : 2px solid rgb(209, 47, 47);
+padding: 10px;
+}
+
+li{
+    margin-left: 80px;
+}

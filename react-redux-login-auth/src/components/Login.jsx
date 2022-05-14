@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { login } from "../slices/auth";
 import { clearMessage } from "../slices/message";
 const Login = (props) => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { message } = useSelector((state) => state.message);
@@ -35,7 +36,7 @@ const Login = (props) => {
       });
   };
   if (isLoggedIn) {
-    return <Redirect to="/profile" />;
+    return navigate("/profile");
   }
   return (
     <div className="col-md-12 login-form">

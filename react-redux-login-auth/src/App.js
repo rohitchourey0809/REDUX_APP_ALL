@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
-import './App.css';
-import { Navbar } from './components/Navbar';
-import { Route, Routes } from 'react-router-dom';
+import "./App.css";
+// import { Navbar } from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
@@ -13,7 +13,8 @@ import Profile from "./components/Profile";
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
+
       <div className="container mt-3">
         <Routes>
           <Route exact path={["/", "/home"]} component={Home} />
@@ -24,7 +25,7 @@ function App() {
           <Route path="/mod" component={BoardModerator} />
           <Route path="/admin" component={BoardAdmin} /> */}
         </Routes>
-      </div>
+    </div> 
     </div>
   );
 }

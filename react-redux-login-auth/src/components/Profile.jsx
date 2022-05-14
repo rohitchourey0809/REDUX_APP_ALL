@@ -1,10 +1,11 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Profile = () => {
+  const navigate = useNavigate();
   const { user: currentUser } = useSelector((state) => state.auth);
   if (!currentUser) {
-    return <Redirect to="/login" />;
+    return navigate("/login");
   }
   return (
     <div className="container">
